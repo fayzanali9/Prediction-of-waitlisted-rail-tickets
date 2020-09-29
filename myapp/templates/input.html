@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block code_block %}
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+         <style>
+        h1 { color:  #39304f; }
+        </style>
+    </head>
+    <body style="background-color:TEAL">
+
+        <div class="container" style="font-family:verdana">
+            <h1 style="color:RGB(155, 35, 53);">This application will predict whether the ticket will get confirmed or not</h1>
+            <h3>Choose the following</h3>
+            <form action="/input" method="POST">
+
+                <div class="form-group">
+                    <label for="">Algorithm</label>
+                    <select name ="Algorithm" class="form-control">
+                        <option value="0">GradientBoost</option>
+                        <option value="1">Ada Boost</option>
+                        <option value="2">Decision Tree</option>
+                        <option value="3">XGBoost</option>
+                        <option value="4">Random Forest</option>
+                        <option value="5">SVM</option>
+                        <option value="6">Naive Bayes</option>
+                    </select>
+                </div>
+
+                <hr>
+
+                <div class="form-group">
+                    <label for="">Coach class</label>
+                    <select name = "Coach class" class="form-control">
+                        <option value="0">SL</option>
+                        <option value="1">1A</option>
+                        <option value="2">2A</option>
+                        <option value="3">3A</option>
+                        <option value="4">CC</option>
+                        <option value="5">2S</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="">Booking status</label>
+                    <input type="number" class="form-control" name="Booking status">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Status after 1 day</label>
+                    <input type="number" class="form-control" name="Status after 1 day">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Status after 1 month</label>
+                    <input type="number" class="form-control" name="Status after 1 month">
+                </div>
+
+
+                <div class="form-group">
+                    <label for="">Status after 1 week</label>
+                    <input type="number" class="form-control" name="Status after 1 week">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Status after 2 days</label>
+                    <input type="number" class="form-control" name="Status after 2 days">
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" class="btn btn-success" value="Predict">
+                    <input type="reset" class="btn btn-danger" value="Clear">
+                </div>
+
+
+            </form>
+        </div>
+    </body>
+    </html>
+{% endblock %}
